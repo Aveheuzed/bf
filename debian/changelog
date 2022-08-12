@@ -1,0 +1,110 @@
+bf (20041219ubuntu6) bionic; urgency=high
+
+  * No change rebuild to pick up -fPIE compiler default
+
+ -- Balint Reczey <rbalint@ubuntu.com>  Tue, 03 Apr 2018 12:14:18 +0000
+
+bf (20041219ubuntu5) quantal; urgency=low
+
+  * debian/control: added ${misc:Depends} since debhelper is used. 
+
+ -- Benjamin Kerensa <bkerensa@ubuntu.com>  Mon, 24 Sep 2012 00:27:16 -0700
+
+bf (20041219ubuntu4) oneiric; urgency=low
+
+  * Makefile: fixing library order at the linker call (LP: #765951)
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@linaro.org>  Sun, 04 Sep 2011 20:30:17 -0300
+
+bf (20041219ubuntu3) karmic; urgency=low
+
+  * bf.c: work around to fix gcc warning (LP: #453469):
+      http://gcc.gnu.org/bugzilla/show_bug.cgi?id=35903
+    This fix a "array subscript is above array bounds" warning.
+  * debian/control: 
+    - Fixed lithian debian-rules-ignores-make-clean-error,
+    - debhelper Build-Depends changed to 6
+  * debian/compat: Changed to 6
+
+ -- Alfonso Cepeda Caballos <cepeda@gmail.com>  Sun, 18 Oct 2009 18:19:38 +0200
+
+bf (20041219ubuntu2) gutsy; urgency=low
+
+  * debian/control: Update maintainer fields according to debian-
+    maintainer-field spec.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Tue, 14 Aug 2007 10:51:54 +0000
+
+bf (20041219ubuntu1) dapper; urgency=low
+
+  * slang-transition: Update build-dependency 
+    slang1-dev | slang1-utf8-dev to libslang2-dev.
+
+ -- Stefan Potyra <sistpoty@ubuntu.com>  Wed,  8 Feb 2006 02:09:24 +0100
+
+bf (20041219) unstable; urgency=low
+
+  * bf.c: rewrite of ReadProgram() and Interprete() to gain speed,
+          removed PutIntoProgram(), added FindMatchingBrackets()
+          and removed -d (debug) option; minor changes
+  * errors.c: changes to get non-GNU-compatibility
+  * stack.[ch]: removed, because useless
+  * added examples/quine[123].b, examples/hello.b
+
+ -- Stephan Beyer <s-beyer@gmx.net>  Sun, 19 Dec 2004 14:22:33 +0100
+
+bf (20040828) unstable; urgency=low
+
+  * stack.c, stack.h: added trivial stack implementation
+  * bf.c: converted recursion to iteration using stack (advantages:
+          faster, no stack overflows on deep loops)
+    Note: stack.[ch] became useless, because we use a faster array stack
+          now.
+
+ -- Stephan Beyer <s-beyer@gmx.net>  Sat, 28 Aug 2004 09:12:36 +0200
+
+bf (20040728) unstable; urgency=low
+
+  * tty_termios.c is for usage without slang (TODO)
+  * tty_slang.c is where slang-specific code went into
+  * bf.c: added signal handler for SIGINT (C-c), SIGTERM (kill) and 
+          SIGQUIT (C-\), changed default input mode from 4 to 0
+  * Makefile: included gcc optimizations
+  * added examples/*
+  * compiled with Slang support (slang1, not slang1a-utf8)
+ 
+ -- Stephan Beyer <s-beyer@gmx.net>  Thu, 29 Jul 2004 01:30:20 +0200
+
+bf (20040704) unstable; urgency=low
+
+  * "Bugfix" in manpage (unquoted minus)
+
+ -- Stephan Beyer <s-beyer@gmx.net>  Sun,  4 Jul 2004 20:10:57 +0200
+
+bf (20040430) unstable; urgency=low
+
+  * Bugfix: -,1 to -,4 returned \r instead of \n
+  * Added -n option to translate \n input to \0.
+
+ -- Stephan Beyer <s-beyer@gmx.net>  Fri, 30 Apr 2004 12:59:22 +0200
+
+bf (20040423) unstable; urgency=low
+
+  * Optimized code, speeded up interpreting
+
+ -- Stephan Beyer <s-beyer@gmx.net>  Fri, 23 Apr 2004 20:40:25 +0200
+
+bf (20040408) unstable; urgency=low
+
+  * Added -, option (0 to 4) to specify new input modes (using S-Lang library)
+    and made 4 the default
+  * Added -h... (help) and -w option
+  * Wrote manual page
+
+ -- Stephan Beyer <s-beyer@gmx.net>  Thu,  8 Apr 2004 13:46:31 +0200
+
+bf (20031030) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Stephan Beyer <s-beyer@gmx.net>  Wed, 10 Mar 2004 19:49:04 +0100

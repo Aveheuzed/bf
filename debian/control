@@ -1,0 +1,18 @@
+Source: bf
+Section: devel
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Stephan Beyer <s-beyer@gmx.net>
+Build-Depends: debhelper (>= 6), libslang2-dev
+Standards-Version: 3.6.1
+
+Package: bf
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: a fast Brainfuck interpreter
+ bf ('a Brainfuck interpreter') is a simple and fast interpreter
+ for the esoteric programming language Brainfuck. It offers some
+ options to define special behavior, which is nice if you take
+ part in Brainfuck programming contests with special rules.
+ . 
+ This package is compiled with S-Lang support.
