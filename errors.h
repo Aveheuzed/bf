@@ -1,26 +1,17 @@
 /* errors.h
- * (C) Stephan Beyer, 2003, 2004, GPL */
+ * (C) Stephan Beyer, 2003, 2004, GPL
+ * (C) Alexis Masson, 2022, GPL */
 #ifndef ERRORS_H
 #define ERRORS_H
 
-#define ERROCCMSG	"an error occured"
-#define DoAndErr(COND,STR,ERR)	if (COND) HandleError(#STR, __FILE__, __LINE__, ERR);
+#define DoAndErr(COND,STR)	if (COND) ErrorMsg(STR);
 
-enum errorcodes
-{
-	errNO = 0,
-	errMEMORY,
-	errOPT,
-	errFILE,
-	errBRACKET,
-	errOUTOFRANGE,
-	errWRAPAROUND,
-	errSLANG,
-	errSIGNAL,
-	errUNDEFINED
-};
+#include "wrapper.h"
 
-void ErrorMsg(signed int nr, const char *msg);
-void HandleError(const char *def, char *file, unsigned int line, signed int nr);
+#ifdef __cplusplus
+extern "C"
+#endif
+__attribute__((noreturn))
+void ErrorMsg(const char *msg);
 
 #endif

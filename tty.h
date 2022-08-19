@@ -4,6 +4,5 @@
 
 void ttyInit(void);
 char ttyGetInput(void);
-void ttyRestore(void);
 
 #endif
